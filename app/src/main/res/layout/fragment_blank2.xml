@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlankFragment2"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/etUserMessageFrag2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="Enter Something"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.152"
+        tools:layout_editor_absoluteX="49dp" />
+
+    <Button
+        android:id="@+id/btnSubmitFrag2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etUserMessageFrag2"
+        app:layout_constraintVertical_bias="0.083"
+        tools:layout_editor_absoluteX="24dp" />
+
+    <TextView
+        android:id="@+id/tvShowTextFrag2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSubmitFrag2"
+        app:layout_constraintVertical_bias="0.125"
+        tools:layout_editor_absoluteX="0dp"
+        android:textColor="@color/white"
+        android:background="@color/black" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
