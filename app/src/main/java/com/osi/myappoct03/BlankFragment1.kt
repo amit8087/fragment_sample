@@ -8,22 +8,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import java.lang.ClassCastException
 
 class BlankFragment1: Fragment(){
 
-    lateinit var btn: Button
-    lateinit var editText: EditText
+    private lateinit var btn: Button
+    private lateinit var editText: EditText
     private var firstFragmentListener: FirstFragmentListener? = null
+    private lateinit var textView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_blank1, container, false)
+        val view = inflater.inflate(R.layout.fragment_blank1, container, false)
 
         btn = view.findViewById(R.id.btnSubmitFrag1)
         editText = view.findViewById(R.id.etUserMessageFrag1)
+        textView = view.findViewById(R.id.tvShowTextFrag1)
         btn.setOnClickListener {
             val msg: String = editText.text.toString()
             firstFragmentListener?.msgFromFirst(msg)
@@ -31,6 +34,9 @@ class BlankFragment1: Fragment(){
         return view
     }
 
+    fun setMessage(msg: String) {
+        textView.text = msg
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

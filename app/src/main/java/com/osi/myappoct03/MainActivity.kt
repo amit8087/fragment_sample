@@ -3,7 +3,7 @@ package com.osi.myappoct03
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class MainActivity : AppCompatActivity(), FirstFragmentListener {
+class MainActivity : AppCompatActivity(), FirstFragmentListener, SecondFragmentListener {
 
     private val frag1 = BlankFragment1()
     private val frag2 = BlankFragment2()
@@ -19,7 +19,10 @@ class MainActivity : AppCompatActivity(), FirstFragmentListener {
     }
 
     override fun msgFromFirst(msg: String) {
-        frag2?.setMessage(msg)
+        frag2.setMessage(msg)
     }
 
+    override fun msgFromSecond(msg: String) {
+        frag1.setMessage(msg)
+    }
 }
