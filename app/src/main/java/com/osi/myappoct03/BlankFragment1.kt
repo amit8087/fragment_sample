@@ -1,6 +1,5 @@
 package com.osi.myappoct03
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import java.lang.ClassCastException
 
 class BlankFragment1: Fragment(){
 
@@ -34,21 +32,11 @@ class BlankFragment1: Fragment(){
         return view
     }
 
+    fun initializeListener(listener: FirstFragmentListener){
+        this.firstFragmentListener = listener
+    }
+
     fun setMessage(msg: String) {
         textView.text = msg
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        try {
-            firstFragmentListener = context as FirstFragmentListener
-        }catch (e: ClassCastException){
-            throw ClassCastException(context.toString()+ " FirstFragmentListener implement failed.")
-        }
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-        firstFragmentListener = null
     }
 }

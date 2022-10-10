@@ -1,8 +1,13 @@
 package com.osi.myappoct03
 
+/*
+* Created by Amit on Oct 07, 2022
+* */
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
+// Main Activity
 class MainActivity : AppCompatActivity(), FirstFragmentListener, SecondFragmentListener {
 
     private val frag1 = BlankFragment1()
@@ -16,6 +21,9 @@ class MainActivity : AppCompatActivity(), FirstFragmentListener, SecondFragmentL
             .add(R.id.frag1, frag1)
             .add(R.id.frag2, frag2)
             .commit()
+
+        frag1.initializeListener(this)
+        frag2.initializeListener(this)
     }
 
     override fun msgFromFirst(msg: String) {
